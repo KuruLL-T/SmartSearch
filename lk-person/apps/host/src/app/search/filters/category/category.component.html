@@ -1,0 +1,13 @@
+<div class="category-container">
+  <span class="category-text">Категории</span>
+  <div class="category-tags-container">
+    <button
+      class="category-tag"
+      *ngFor="let type of filteredTypes"
+      (click)="SwapSelectedTypes(type)"
+      [ngClass]="{'selected': selectedTypes.includes(type)}"
+    >
+      {{type.name}}
+    </button>
+  </div>
+</div>

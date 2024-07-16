@@ -1,0 +1,257 @@
+Services
+{
+  "name": Контингент
+  "service_id": 64c9f215-e826-4802-af2f-bbda729887aa
+},
+{
+  "name": Образование
+  "service_id": efd47d30-da0e-4ca6-9864-b018c3a11dd7
+},
+{
+  "name": Справочники
+  "service_id": 565632b1-7df4-4cd4-9f36-bc07e12a2cca
+},
+{
+  "name": Проектирование
+  "service_id": 3a3a70be-6520-44e5-b293-c7f2a2426752
+},
+{
+  "name": Планирование
+  "service_id": efd0a193-64e3-4ba9-ac75-4b0de89f5445
+},
+{
+  "name": Работники
+  "service_id": 89a7e155-96f1-4a97-8254-8b6330413530
+},
+{
+  "name": Новости
+  "service_id": 864fe5bd-b9f9-4a6d-8bda-b47e36cc4d1f
+}
+
+------------------------------------------------------
+Types
+{
+  "name": Преподаватели
+  "type_id": 7b46d5d2-1234-47ff-b372-3c99e892076e
+  "priority": 1
+  "service_name": Работники
+},
+{
+  "name": Группы
+  "type_id": e80da1ff-86ab-477a-bf3e-32147ad2aa87
+  "priority": 2
+  "service_name": Контингент
+},
+{
+  "name": Студенты
+  "type_id": 1ba7d02b-8650-4197-b01d-4aa40d3084a8
+  "priority": 3
+  "service_name": Контингент
+},
+{
+  "name": Аспиранты и докторанты
+  "type_id": 54812a2f-a8cc-44f2-b610-f1dc0ea69d86
+  "priority": 4
+  "service_name": Работники
+},
+{
+  "name": Научные сотрудники
+  "type_id": 6bccc836-6054-48a1-9aeb-03e9121df5fb
+  "priority": 3
+  "service_name": Работники
+},
+{
+  "name": Технический персонал
+  "type_id": 7a02ba02-8d91-446c-aff2-f86f66af5247
+  "priority": 2
+  "service_name": Работники
+},
+{
+  "name": Методички
+  "type_id": cabb69e8-1c18-4e48-b417-01fa1d0dd255
+  "priority": 1
+  "service_name": Справочники
+},
+{
+  "name": Статьи
+  "type_id": 7bbc3ff9-ec8d-4271-85e9-adda1ceb2332
+  "priority": 1
+  "service_name": Новости
+}
+
+------------------------------------------------------
+User
+{
+  "user type": student
+  "external_id": e532392d-f121-441f-9215-dd0bf766d8b4
+  "type_id": 1ba7d02b-8650-4197-b01d-4aa40d3084a8
+  "header": Пивоваров Андрей Васильевич
+  "description": Пиво любит
+  "image":
+  "link": example.link
+  "access_rights": 
+    {
+      "servicesId": "[64c9f215-e826-4802-af2f-bbda729887aa, efd47d30-da0e-4ca6-9864-b018c3a11dd7, 565632b1-7df4-4cd4-9f36-bc07e12a2cca]",
+      "typesId": "[e80da1ff-86ab-477a-bf3e-32147ad2aa87, 1ba7d02b-8650-4197-b01d-4aa40d3084a8]",
+      "facultyId": "62e4ec89-0090-4603-9644-b52f9b023ac5",
+      "groupId": "3a602afb-1e99-4d5f-9810-f0b7c8d4fdd5"
+    }
+},
+{
+  "user type": student
+  "external_id": 1c133d3f-7ed1-4a2e-9184-ff6f41916743
+  "type_id": 1ba7d02b-8650-4197-b01d-4aa40d3084a8
+  "header": Пивоварова Василиса Николаевна
+  "description": Тут чуть-чуть выдуманное
+  "image":
+  "link": example.link
+  "access_rights": 
+    {
+      "servicesId": "[64c9f215-e826-4802-af2f-bbda729887aa, efd47d30-da0e-4ca6-9864-b018c3a11dd7, 565632b1-7df4-4cd4-9f36-bc07e12a2cca]",
+      "typesId": "[e80da1ff-86ab-477a-bf3e-32147ad2aa87, 1ba7d02b-8650-4197-b01d-4aa40d3084a8]",
+      "facultyId": "62e4ec89-0090-4603-9644-b52f9b023ac5",
+      "groupId": "3a602afb-1e99-4d5f-9810-f0b7c8d4fdd5"
+    }
+},
+{
+  "user type": student
+  "external_id": 0729407b-ca22-4d7e-9cd7-64bf445a9a53
+  "type_id": 1ba7d02b-8650-4197-b01d-4aa40d3084a8
+  "header": Писарев Константин Михайлович
+  "description": Тут чуть-чуть умное
+  "image":
+  "link": example.link
+  "access_rights": 
+    {
+      "servicesId": "[64c9f215-e826-4802-af2f-bbda729887aa, efd47d30-da0e-4ca6-9864-b018c3a11dd7, 565632b1-7df4-4cd4-9f36-bc07e12a2cca]",
+      "typesId": "[e80da1ff-86ab-477a-bf3e-32147ad2aa87, 1ba7d02b-8650-4197-b01d-4aa40d3084a8]",
+      "facultyId": "1eea6b3f-3ca4-42f7-9dac-6c62e1141d71",
+      "groupId": "174d95b4-7b47-4361-9f39-c60657d8f56f"
+    }
+},
+{
+  "user type": teacher
+  "external_id": 10836030-e8e8-4073-80eb-4893f978576b
+  "type_id": 54812a2f-a8cc-44f2-b610-f1dc0ea69d86
+  "header": Исаков Николай Александрович
+  "description": Знает все виды яичницы
+  "image":
+  "link": example.link
+  "access_rights": 
+    {
+      "servicesId": "[]",
+      "typesId": "[]"
+    }
+}
+
+------------------------------------------------------
+SearchItem
+{
+  "external_id": d03a6f99-ec68-46d1-b274-219a87ab2c2b
+  "type_id": cabb69e8-1c18-4e48-b417-01fa1d0dd255
+  "header": Гранитоды Куларского Поднятия
+  "description": Автореферат диссертации, представляющей на соискание ученой степени кандидата геолого-минералогических наук
+  "image":
+  "link": example.link
+  "access_rights": 
+    {
+      "facultyId": "1eea6b3f-3ca4-42f7-9dac-6c62e1141d71",
+      "groupId": "174d95b4-7b47-4361-9f39-c60657d8f56f"
+    }
+},
+{
+  "external_id": 0e3fe111-87cd-43cf-9809-320647c788cb
+  "type_id": cabb69e8-1c18-4e48-b417-01fa1d0dd255
+  "header": Биологические основы жизнедеятельности человека
+  "description": Методические занятия к практическим занятиям по медицинской биологии для студентов 1 курса
+  "image":
+  "link": example.link
+  "access_rights": 
+    {
+      "facultyId": "cedf4c35-aa8a-42f7-b6f9-3b0629885180",
+      "groupId": "a5a8d1be-83e9-46bc-a40d-2fcd57eb8c77"
+    }
+},
+{
+  "external_id": dbfd786d-fc9c-4ebb-8d34-c05e31ccf1d7
+  "type_id": e80da1ff-86ab-477a-bf3e-32147ad2aa87
+  "header": ПС-33
+  "description": Кто здесь учится вообще?
+  "image":
+  "link": example.link
+  "access_rights": 
+    {
+      "facultyId": "1eea6b3f-3ca4-42f7-9dac-6c62e1141d71",
+      "groupId": "174d95b4-7b47-4361-9f39-c60657d8f56f"
+    }
+},
+{
+  "external_id": d39f0626-1765-41a8-93d3-c512c75df2d2
+  "type_id": e80da1ff-86ab-477a-bf3e-32147ad2aa87
+  "header": БИ-24
+  "description": 09.04.03
+  "image":
+  "link": example.link
+  "access_rights": 
+    {
+      "facultyId": "62e4ec89-0090-4603-9644-b52f9b023ac5",
+      "groupId": "3a602afb-1e99-4d5f-9810-f0b7c8d4fdd5"
+    }
+},
+{
+  "external_id": af616842-fd69-4a97-ab06-4957cbca484c
+  "type_id": 7bbc3ff9-ec8d-4271-85e9-adda1ceb2332
+  "header": О пользе самсы
+  "description": Самса — несложный в приготовлении азиатский пирожок. У нас широко известна самса узбекская, хотя рецепт самсы и как сделать самсу знают во многих странах Центральной, Южной и Юго-Западной Азии.
+  "image":
+  "link": example.link
+  "access_rights": {}
+},
+
+<---------------Новые SearchItem--------------->
+
+{
+  "external_id": f0c04cbb-183c-49d2-89b6-eb10b013cc15
+  "type_id": Статьи
+  "header": О пользе шоколада
+  "description": Шоколада — несложный в приготовлении азиатский пирожок. У нас широко известна шоколада узбекская, хотя рецепт шоколады и как сделать шоколада знают во многих странах Центральной, Южной и Юго-Западной Антарктиды.
+  "image":
+  "link": example.link
+  "access_rights": {}
+},
+{
+  "external_id": 426dfa64-4c83-45b8-81fb-4caa8c8fd51c
+  "type_id": Статьи
+  "header": О опа гангнам стайл
+  "description": Скриптонит выпустил новый трек
+  "image":
+  "link": example.link
+  "access_rights": {}
+},
+{
+  "external_id": 59092fc8-b119-4a56-87d4-dc80dd79a564
+  "type_id": Статьи
+  "header": Свежие анекдоты
+  "description": Купец
+  "image":
+  "link": example.link
+  "access_rights": {}
+},
+{
+  "external_id": 2f5dd56c-0d0c-4c04-bcb4-41b2a2b0a60c
+  "type_id": Статьи
+  "header": Свежие новости
+  "description": А я ими отравился хех)))!!!!
+  "image":
+  "link": example.link
+  "access_rights": {}
+},
+{
+  "external_id": d6f49736-6eb2-406a-8e76-68aaf6c35d50
+  "type_id": Статьи
+  "header": Паралич мозга
+  "description": ээээээ...эээЭЭээЭэЭэээээ....
+  "image":
+  "link": example.link
+  "access_rights": {}
+}

@@ -1,0 +1,12 @@
+<div class="search-results-container">
+  <div class="search-results-text-container">
+    <div>Результаты поиска - {{searchResults.items.length}}</div>
+    <div>Сортировка</div>
+  </div>
+  <div class="item-container" *ngFor="let item of searchResults.items" (click)="Navigate(item.link)">
+    <div class="item-block">
+      <img [src]="item.base64Img" alt="Image" class="item-image"/>
+      <div class="item-header">{{item.name}}</div>
+    </div>
+  </div>
+</div>

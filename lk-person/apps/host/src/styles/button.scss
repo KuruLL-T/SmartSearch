@@ -1,0 +1,20 @@
+.education-edit-button {
+  height: 30px;
+  text-transform: none;
+  border: 0.75px solid #646464;
+  border-radius: 4px;
+  background: transparent;
+  box-shadow: none;
+
+  .k-button-text {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    color: #646464;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .k-button-icon {
+    color: #646464;
+  }
+}

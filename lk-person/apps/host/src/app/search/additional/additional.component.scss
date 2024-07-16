@@ -1,0 +1,38 @@
+.additional-tags-container
+{
+  display: flex;
+  width: 573px;
+  min-width: 480px;
+  max-width: 730px;
+  margin: 10px;
+  align-items: flex-start;
+  align-content: flex-start;
+  padding: 5px 10px;
+  gap: 10px var(--kendo-spacing-25, 10px);
+  align-self: flex-end;
+  flex-wrap: wrap;
+  border-top: 1px solid #000;
+}
+
+.additional-tag
+{
+  display: flex;
+  padding: 5px 9px;
+  background-color: #fff;
+  color: #2192CE;
+  gap: var(--kendo-spacing-0);
+  border-radius: 5px;
+  border: 2px solid #2192CE;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: center;
+  opacity: 1;
+}
+
+.additional-tag.selected
+{
+  background-color:  #2192CE;
+  color: #fff;
+}

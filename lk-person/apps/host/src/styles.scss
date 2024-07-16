@@ -1,0 +1,77 @@
+/* You can add global styles to this file, and also import other style files */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #fafafa;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 22px;
+  line-height: 24px;
+}
+
+.k-notification-error {
+  border-color: #f5c6cb;
+  color: #721c24;
+  background-color: #f8d7da;
+}
+
+.k-notification-success {
+  border-color: #c3e6cb;
+  color: #155724;
+  background-color: #d4edda;
+}
+
+.noty-error,
+.noty-success {
+  width: 500px;
+
+  /*height: 100px;*/
+}
+
+.k-notification {
+  white-space: normal;
+}
+
+.k-notification p {
+  margin-left: 80px;
+}
+
+.k-notification h3 {
+  padding: 15px 10px 0;
+  font-size: 1em;
+  line-height: normal;
+  font-weight: bold;
+}
+
+.k-notification img {
+  margin: 20px;
+  float: left;
+}
+
+.k-overlay {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+
+.k-treeview-leaf {
+  user-select: none;
+  cursor: pointer;
+}
+
+kendo-drawer-container {
+  min-height: 100vh;
+}
+
+.row-blocks {
+  display: flex;
+  align-items: center;
+}

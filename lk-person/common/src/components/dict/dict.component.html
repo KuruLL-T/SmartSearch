@@ -1,0 +1,196 @@
+<div [ngClass]="{'edit-mode': isEditMode}">
+  <h1>{{ dictName }}</h1>
+
+  <div class="grid-container">
+    <ng-container *ngIf="!isTreeList">
+      <kendo-grid [kendoGridBinding]="data"
+                  [group]="group"
+                  [pageable]="pageable"
+                  [pageSize]="pageSize"
+                  (add)="addHandler($event)"
+                  (cellClick)="editHandler($event)"
+                  (remove)="removeHandler($event)"
+                  [sortable]="sortable" [filterable]="filterable"
+                  [loading]="loading">
+
+        <ng-template kendoGridLoadingTemplate>
+          <div class="k-loading-color"></div>
+          <div class="loading-container">
+            <kendo-loader type="converging-spinner" size="medium"></kendo-loader>
+          </div>
+        </ng-template>
+
+        <ng-template kendoGridToolbarTemplate position="both" *ngIf="editable">
+          <button kendoGridAddCommand size="small" themeColor="success" *ngIf="!editOnly && !isInEditingMode" icon="plus">Добавить</button>
+          <div *ngIf="isInEditingMode">
+            <button kendoButton
+                    size="small"
+                    (click)="closeEditor()">
+              Отмена
+            </button>
+            <button kendoButton
+                    [disabled]="!form?.valid"
+                    size="small"
+                    themeColor="primary"
+                    (click)="saveCurrent()">
+              Сохранить
+            </button>
+          </div>
+        </ng-template>
+
+        <kendo-grid-column title="№" headerClass="grid-header dictionaries" [width]="100">
+          <ng-template kendoGridCellTemplate let-rowIndex="rowIndex">
+            <span class="align-cells">
+              {{ rowIndex > -1 ? rowIndex + 1 : '' }}
+            </span>
+          </ng-template>
+        </kendo-grid-column>
+
+        <ng-container *ngFor="let column of fieldsInfo">
+          <kendo-grid-column [field]="column.field ?? ''"
+                             [title]="column.title ?? (column.type === FieldType.Order ? 'Порядковый номер для сортировки при отображении' : '')"
+                             headerClass="grid-header dictionaries"
+                             [sortable]="column.sortable ?? true"
+                             [filterable]="!nonFilterableFields.includes(column.type) && (column.filterable ?? true)"
+                             [width]="column.width">
+            <ng-template kendoGridEditTemplate let-formGroup="formGroup" [ngSwitch]="column.type">
+              <kendo-textbox *ngSwitchCase="FieldType.Textbox"
+                             [formControl]="formGroup.get(column.field)"
+                             [clearButton]="true">
+              </kendo-textbox>
+
+              <kendo-numerictextbox *ngSwitchCase="FieldType.Order"
+                                    [min]="1"
+                                    format="n0"
+                                    [decimals]="0"
+                                    [formControl]="formGroup.get(column.field)">
+              </kendo-numerictextbox>
+
+              <kendo-numerictextbox *ngSwitchCase="FieldType.Number"
+                                    format="n0"
+                                    [decimals]="0"
+                                    [formControl]="formGroup.get(column.field)">
+              </kendo-numerictextbox>
+
+              <kendo-numerictextbox *ngSwitchCase="FieldType.Float"
+                                    [formControl]="formGroup.get(column.field)">
+              </kendo-numerictextbox>
+
+              <kendo-combobox *ngSwitchCase="FieldType.Combobox"
+                              [data]="column.listOptions?.data ?? []"
+                              [textField]="column.listOptions?.textField ?? ''"
+                              [valueField]="column.listOptions?.valueField ?? ''"
+                              [valuePrimitive]="true"
+                              #combobox
+                              [openOnFocus]="combobox"
+                              [kendoDropDownFilter]="filterSettings"
+                              [formControl]="formGroup.get(column.field)">
+              </kendo-combobox>
+
+              <kendo-multiselect *ngSwitchCase="FieldType.Multiselect"
+                                 [data]="column.listOptions?.data ?? []"
+                                 [textField]="column.listOptions?.textField ?? ''"
+                                 [valueField]="column.listOptions?.valueField ?? ''"
+                                 [valuePrimitive]="true"
+                                 [kendoDropDownFilter]="filterSettings"
+                                 kendoMultiSelectSummaryTag
+                                 [formControl]="formGroup.get(column.field)">
+                <ng-template kendoMultiSelectGroupTagTemplate let-dataItems>
+                  <span>{{ dataItems.length }} выбрано</span>
+                </ng-template>
+              </kendo-multiselect>
+
+              <span class="align-cells" *ngSwitchCase="FieldType.Autocomplete">
+                {{ getDataItemText(formGroup.get(column.field).value, column.listOptions) }}
+              </span>
+
+              <span class="align-cells" *ngSwitchCase="FieldType.Checkbox">
+                <input type="checkbox" kendoCheckBox [formControl]="formGroup.get(column.field)"/>
+              </span>
+
+              <span class="align-cells" *ngSwitchCase="FieldType.Color">
+                <kendo-colorpicker [formControl]="formGroup.get(column.field)" format="hex">
+                </kendo-colorpicker>
+              </span>
+
+              <span class="k-clear-value" *ngIf="numericFields.includes(column.type)">
+                <span *ngIf="formGroup.value[column.field]"
+                      class="k-icon k-i-x"
+                      (click)="clearField(column.field ?? '')">
+                </span>
+              </span>
+            </ng-template>
+
+            <ng-template kendoGridCellTemplate let-dataItem>
+              <span class="align-cells" *ngIf="column.type === FieldType.Checkbox">
+                {{ column.boolOptions?.get(dataItem[column.field]) }}
+              </span>
+              <span class="align-cells" *ngIf="column.type === FieldType.Color">
+                <div class="color-block" [style.background]="dataItem[column.field]"></div>
+              </span>
+              <span class="align-cells" *ngIf="column.type === FieldType.Link">
+                <div class="pointer" [class]="column.iconClass" (click)="column?.clickHandler(dataItem)"></div>
+              </span>
+              <span *ngIf="column.type !== FieldType.Checkbox
+                        && column.type !== FieldType.Color
+                        && column.type !== FieldType.Link"
+                    [ngClass]="{
+                             'align-cells': true,
+                             'left-alignment': leftAlignmentFields.includes(column.type)
+                           }">
+                {{ listOptionsFields.includes(column.type)
+                    ? getDataItemText(dataItem[column.field], column.listOptions)
+                    : dataItem[column.field] }}
+              </span>
+            </ng-template>
+
+            <ng-template kendoGridGroupHeaderTemplate let-group="group">
+              <span>
+                {{ groupTitle ? groupTitle : column.title }} :
+                {{ column.type === FieldType.Combobox ? getDataItemText(group.value, column.listOptions) : group.value }}
+              </span>
+            </ng-template>
+
+            <ng-template kendoGridFilterCellTemplate let-filter let-col="column">
+              <filter-combobox *ngIf="listOptionsFields.includes(column.type)"
+                               [filter]="filter"
+                               [data]="column.listOptions?.data ?? []"
+                               [gridField]="column.field ?? ''"
+                               [textField]="column.listOptions?.textField ?? ''"
+                               [valueField]="column.listOptions?.valueField ?? ''">
+              </filter-combobox>
+
+              <kendo-grid-string-filter-cell *ngIf="!listOptionsFields.includes(column.type)"
+                                             [column]="col"
+                                             [filter]="filter"
+                                             [showOperators]="false"
+                                             operator="contains">
+                <kendo-filter-contains-operator></kendo-filter-contains-operator>
+              </kendo-grid-string-filter-cell>
+            </ng-template>
+          </kendo-grid-column>
+        </ng-container>
+
+        <kendo-grid-column *ngIf="!editOnly && editable" headerClass="dictionaries" [width]="70">
+          <ng-template kendoGridCellTemplate>
+            <span class="align-cells">
+              <button kendoGridRemoveCommand
+                      themeColor="secondary"
+                      icon="delete"
+                      fillMode="flat"
+                      size="small"
+                      rounded="full">
+              </button>
+            </span>
+          </ng-template>
+        </kendo-grid-column>
+      </kendo-grid>
+    </ng-container>
+
+    <ng-container *ngIf="isTreeList">
+<!--      TODO: kendo-treelist-->
+    </ng-container>
+  </div>
+</div>
+
+<div kendoDialogContainer></div>

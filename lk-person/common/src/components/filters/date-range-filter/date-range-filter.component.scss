@@ -1,0 +1,16 @@
+.range {
+  padding: 5px;
+  margin: 0;
+  display: flex;
+
+  .range-label {
+    margin: 0;
+    padding-right: 5px;
+    display: flex;
+  }
+
+  .span {
+    width: 20px;
+    margin: auto;
+  }
+}

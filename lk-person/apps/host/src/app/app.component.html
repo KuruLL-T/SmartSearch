@@ -1,0 +1,78 @@
+<kendo-appbar position="top">
+  <kendo-appbar-section style="position: absolute">
+    <a href="/" class="logo"></a>
+    <h1 class="title">ЮНИВУЗ 3.0</h1>
+  </kendo-appbar-section>
+  <kendo-appbar-spacer></kendo-appbar-spacer>
+  <kendo-appbar-section>
+    <!--<h1 class="title full">{{fullTitle}}</h1>
+    <h1 class="title small">{{shortTitle}}</h1>-->
+    <app-search></app-search>
+  </kendo-appbar-section>
+  <kendo-appbar-spacer></kendo-appbar-spacer>
+  <kendo-menu class="person-menu">
+    <kendo-menu-item text="Name">
+      <ng-template kendoMenuItemTemplate let-item="item">
+        <div class="menu-picture" [style.background-image]="photoUrl"></div>
+        <h2 class="person-full-name">{{person.fullName}}</h2>
+        <div class="burger-menu k-icon k-i-menu k-icon-md"></div>
+      </ng-template>
+      <kendo-menu-item *ngIf="isAdmin" [cssStyle]="{ color: '#42A7DD' }"  icon="user">
+        <ng-template kendoMenuItemTemplate let-item="item">
+          <div class="menu-item" (click)="switchUser()">
+            <h2 class="menu-title">Просмотр от другого лица</h2>
+          </div>
+        </ng-template>
+      </kendo-menu-item>
+      <kendo-menu-item *ngIf="isSwitchActive" [cssStyle]="{ color: '#42A7DD' }"  icon="circle">
+        <ng-template kendoMenuItemTemplate let-item="item">
+          <div class="menu-item" (click)="stopUserPreview()">
+            <h2 class="menu-title">Остановить просмотр</h2>
+          </div>
+        </ng-template>
+      </kendo-menu-item>
+      <kendo-menu-item [cssStyle]="{ color: '#42A7DD' }" text="logout"  icon="logout">
+        <ng-template kendoMenuItemTemplate let-item="item">
+          <div class="menu-item" (click)="logOut()">
+            <h2 class="menu-title">Выход</h2>
+          </div>
+        </ng-template>
+      </kendo-menu-item>
+    </kendo-menu-item>
+  </kendo-menu>
+</kendo-appbar>
+<kendo-drawer-container>
+  <kendo-drawer
+    #drawer
+    [items]="items"
+    [mini]="true"
+    mode="push"
+    [(expanded)]="expanded"
+    (select)="onSelect($event)"
+  >
+    <ng-template kendoDrawerItemTemplate let-item>
+      <a [ngClass]="{'url-item': item.return}" target="_blank" href="{{item.url}}" class="drawer-item-body"
+         *ngIf="menuVisible(item)"
+         [class.disabled]="item.disabled === true"
+         (click)="menuClick(item)">
+        <div class="drawer-item-content">
+          <kendo-badge-container>
+            <span class="k-icon item-icon {{ item.icon }}"></span>
+            <kendo-badge *ngIf="isAlertEnabled(item.text)">{{getBadgeCount(item.text)}}</kendo-badge>
+          </kendo-badge-container>
+          <span class="drawer-item-text" *ngIf="expanded">{{ item.text }}</span>
+        </div>
+      </a>
+    </ng-template>
+  </kendo-drawer>
+
+  <kendo-drawer-content>
+    <kendo-breadcrumb
+      [collapseMode]="collapseMode"
+      (itemClick)="onItemClick($event)"
+      class="breadcrumb-style"
+      [items]="breadcrumbitems"
+    ></kendo-breadcrumb>
+    <router-outlet></router-outlet>
+  </kendo-drawer-content>
+</kendo-drawer-container>

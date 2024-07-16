@@ -1,0 +1,13 @@
+<kendo-combobox
+        class="list"
+        [data]="data"
+        (valueChange)="onChange($event)"
+        [value]="selectedValue"
+        [kendoDropDownFilter]="{
+            operator: 'contains'
+        }"
+        [valuePrimitive]="true"
+        [virtual]="useVirtual ? filterVirtualization : false"
+        [textField]="textField"
+        [valueField]="valueField">
+</kendo-combobox>

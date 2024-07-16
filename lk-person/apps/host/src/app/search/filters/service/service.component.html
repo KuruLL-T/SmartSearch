@@ -1,0 +1,13 @@
+<div class="service-container">
+  <span class="service-text">Сервисы</span>
+  <div class="service-tags-container">
+    <button
+      class="service-tag"
+      *ngFor="let service of services"
+      (click)="SwapSelectedServices(service)"
+      [ngClass]="{'selected': selectedServices.includes(service)}"
+    >
+      {{service.name}}
+    </button>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+.filters-container
+{
+  display: flex;
+  width: 573px;
+  min-width: 480px;
+  max-width: 730px;
+  margin: 10px;
+  padding: var(--kendo-spacing-15, 6px) 0px 15px 0px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 5px;
+  align-self: stretch;
+  border-bottom: 1px solid #000;
+}

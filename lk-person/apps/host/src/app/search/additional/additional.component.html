@@ -1,0 +1,26 @@
+<div class="additional-tags-container">
+  <button
+    id="begins"
+    (click)="HandleSearchTerm($event)"
+    class="additional-tag"
+    [ngClass]="{'selected': searchTerms.get(searchId) === 1}"
+  >
+    Начинается
+  </button>
+  <button
+    id="contains"
+    (click)="HandleSearchTerm($event)"
+    class="additional-tag"
+    [ngClass]="{'selected': searchTerms.get(searchId) === 2}"
+  >
+    Содержит
+  </button>
+  <button
+    id="excludes"
+    (click)="HandleSearchTerm($event)"
+    class="additional-tag"
+    [ngClass]="{'selected': searchTerms.get(searchId) === 3}"
+  >
+    Исключает
+  </button>
+</div>

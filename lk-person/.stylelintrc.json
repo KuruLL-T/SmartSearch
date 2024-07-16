@@ -1,0 +1,75 @@
+{
+  "extends": "stylelint-config-standard-scss",
+  "plugins": [
+    "stylelint-stylistic"
+  ],
+  "rules": {
+    "no-invalid-double-slash-comments": null,
+    "function-no-unknown": true,
+    "no-unknown-custom-properties": true,
+    "alpha-value-notation": null,
+    "color-function-notation": null,
+    "media-feature-range-notation": null,
+    "selector-not-notation": null,
+    "font-family-name-quotes": "always-unless-keyword",
+    "scss/double-slash-comment-whitespace-inside": null,
+    "scss/comment-no-empty": null,
+    "comment-whitespace-inside": null,
+    "no-empty-source": null,
+    "selector-pseudo-element-no-unknown": [
+      true,
+      {
+        "ignorePseudoElements": ["ng-deep"]
+      }
+    ],
+    "selector-class-pattern": [
+      "^([a-z][a-z0-9]*)((-|_{0,2})[a-z0-9]+)*$",
+      {
+        "message": "Expected class selector \"%s\" to be kebab-case",
+        "severity": "warning"
+      }
+    ],
+    "stylistic/function-comma-space-after": [
+      "always",
+      {
+        "severity": "warning"
+      }
+    ],
+    "stylistic/function-comma-space-before": [
+      "never",
+      {
+        "severity": "warning"
+      }
+    ],
+    "stylistic/declaration-block-trailing-semicolon": [
+      "always",
+      {
+        "severity": "warning"
+      }
+    ],
+    "stylistic/block-opening-brace-space-before": [
+      "always",
+      {
+        "severity": "warning"
+      }
+    ],
+    "stylistic/declaration-colon-space-before": [
+      "never",
+      {
+        "severity": "warning"
+      }
+    ],
+    "stylistic/declaration-colon-space-after": [
+      "always",
+      {
+        "severity": "warning"
+      }
+    ],
+    "stylistic/indentation": [
+      2,
+      {
+        "severity": "warning"
+      }
+    ]
+  }
+}

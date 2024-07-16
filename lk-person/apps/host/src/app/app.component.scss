@@ -1,0 +1,1335 @@
+$main-background-color: #EEE;
+$menu-icon-color: #42A7DD;
+$kendo-list-item-hover-text: #42A7DD;
+$kendo-treeview-item-hover-text: #42A7DD;
+$kendo-list-item-selected-text: #42A7DD;
+
+@import '~@progress/kendo-theme-material/dist/all';
+@import '../styles/tabs';
+@import '../styles/table';
+@import '../styles/button';
+@import '../styles/input';
+@import '../styles/form';
+
+/** Montserrat Thin **/
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+  src: url("/assets/fonts/montserrat/Montserrat-Thin.woff2") format("woff2"),
+    url("/assets/fonts/montserrat/Montserrat-Thin.woff") format("woff");
+}
+
+/** Montserrat Thin-Italic **/
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+  src: url("/assets/fonts/montserrat/Montserrat-ThinItalic.woff2") format("woff2"),
+    url("/assets/fonts/montserrat/Montserrat-ThinItalic.woff") format("woff");
+}
+
+/** Montserrat ExtraLight **/
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+  src: url("/assets/fonts/montserrat/Montserrat-ExtraLight.woff2") format("woff2"),
+    url("/assets/fonts/montserrat/Montserrat-ExtraLight.woff") format("woff");
+}
+
+/** Montserrat ExtraLight-Italic **/
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+  src: url("/assets/fonts/montserrat/Montserrat-ExtraLightItalic.woff2") format("woff2"),
+    url("/assets/fonts/montserrat/Montserrat-ExtraLightItalic.woff") format("woff");
+}
+
+/** Montserrat Light **/
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  src: url("/assets/fonts/montserrat/Montserrat-Light.woff2") format("woff2"),
+    url("/assets/fonts/montserrat/Montserrat-Light.woff") format("woff");
+}
+
+/** Montserrat Light-Italic **/
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+  src: url("/assets/fonts/montserrat/Montserrat-LightItalic.woff2") format("woff2"),
+    url("/assets/fonts/montserrat/Montserrat-LightItalic.woff") format("woff");
+}
+
+/** Montserrat Regular **/
+@font-face {
+  font-family: "Montserrat";
+  src: url("/assets/fonts/montserrat/Montserrat-Regular.woff2") format("woff2"),
+    url("/assets/fonts/montserrat/Montserrat-Regular.woff") format("woff"),
+    url("/assets/fonts/montserrat/Montserrat-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/** Montserrat Regular Italic **/
+@font-face {
+  font-family: "Montserrat";
+  src: url("/assets/fonts/montserrat/Montserrat-Italic.woff2") format("woff2"),
+    url("/assets/fonts/montserrat/Montserrat-Italic.woff") format("woff"),
+    url("/assets/fonts/montserrat/Montserrat-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/** Montserrat Medium **/
+@font-face {
+  font-family: "Montserrat";
+  src: url("/assets/fonts/montserrat/Montserrat-Medium.woff2") format("woff2"),
+    url("/assets/fonts/montserrat/Montserrat-Medium.woff") format("woff"),
+    url("/assets/fonts/montserrat/Montserrat-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/** Montserrat Medium-Italic **/
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+  src: url("/assets/fonts/montserrat/Montserrat-MediumItalic.woff2") format("woff2"),
+    url("/assets/fonts/montserrat/Montserrat-MediumItalic.woff") format("woff");
+}
+
+
+/** Montserrat SemiBold **/
+@font-face {
+  font-family: "Montserrat";
+  src: url("/assets/fonts/montserrat/Montserrat-SemiBold.woff2") format("woff2"),
+    url("/assets/fonts/montserrat/Montserrat-SemiBold.woff") format("woff"),
+    url("/assets/fonts/montserrat/Montserrat-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/** Montserrat SemiBold-Italic **/
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+  src: url("/assets/fonts/montserrat/Montserrat-SemiBoldItalic.woff2") format("woff2"),
+    url("/assets/fonts/montserrat/Montserrat-SemiBoldItalic.woff") format("woff");
+}
+
+/** Montserrat Bold **/
+@font-face {
+  font-family: "Montserrat";
+  src: url("/assets/fonts/montserrat/Montserrat-Bold.woff2") format("woff2"),
+    url("/assets/fonts/montserrat/Montserrat-Bold.woff") format("woff"),
+    url("/assets/fonts/montserrat/Montserrat-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/** Montserrat Bold-Italic **/
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+  src: url("/assets/fonts/montserrat/Montserrat-BoldItalic.woff2") format("woff2"),
+    url("/assets/fonts/montserrat/Montserrat-BoldItalic.woff") format("woff");
+}
+
+/** Montserrat ExtraBold **/
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+  src: url("/assets/fonts/montserrat/Montserrat-ExtraBold.woff2") format("woff2"),
+    url("/assets/fonts/montserrat/Montserrat-ExtraBold.woff") format("woff");
+}
+
+/** Montserrat ExtraBold-Italic **/
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+  src: url("/assets/fonts/montserrat/Montserrat-ExtraBoldItalic.woff2") format("woff2"),
+    url("/assets/fonts/montserrat/Montserrat-ExtraBoldItalic.woff") format("woff");
+}
+
+/** Montserrat Black **/
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+  src: url("/assets/fonts/montserrat/Montserrat-Black.woff2") format("woff2"),
+    url("/assets/fonts/montserrat/Montserrat-Black.woff") format("woff");
+}
+
+/** Montserrat Black-Italic **/
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+  src: url("/assets/fonts/montserrat/Montserrat-BlackItalic.woff2") format("woff2"),
+    url("/assets/fonts/montserrat/Montserrat-BlackItalic.woff") format("woff");
+}
+
+/** Roboto Regular **/
+@font-face {
+  font-family: "Roboto";
+  src: local("Roboto"), local("Roboto-Regular"),
+    url("/assets/fonts/roboto/Roboto.woff2") format("woff2"),
+    url("/assets/fonts/roboto/Roboto.woff") format("woff"),
+    url("/assets/fonts/roboto/Roboto.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Roboto Medium */
+@font-face {
+  font-family: "Roboto";
+  src: local("Roboto Medium"), local("Roboto-Medium"),
+    url("/assets/fonts/roboto/Robotomedium.woff2") format("woff2"),
+    url("/assets/fonts/roboto/Robotomedium.woff") format("woff"),
+    url("/assets/fonts/roboto/Robotomedium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/** Roboto Bold **/
+@font-face {
+  font-family: "Roboto";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("/assets/fonts/roboto/Robotobold.woff2") format("woff2"),
+    url("/assets/fonts/roboto/Robotobold.woff") format("woff"),
+    url("/assets/fonts/roboto/Robotobold.ttf") format("truetype");
+}
+
+body {
+  margin: 0;
+  background-color: $main-background-color;
+  min-height: 100vh;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 24px;
+
+  /* цвет текста */
+  color: #292929;
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 17px;
+
+  /* цвет текста */
+  color: #000;
+}
+
+h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 17px;
+
+  /* цвет текста */
+  color: #525252;
+}
+
+h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 20px;
+
+  /* цвет текста */
+  color: #000;
+
+  &.title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
+
+h5 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 22px;
+  color: #525252;
+}
+
+.title-gray-color {
+  color: #525252;
+}
+
+h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 150%;
+  margin: 14px 0;
+}
+
+kendo-label {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+
+  /* цвет текста */
+  color: rgba(0, 0, 0, 0.87);
+}
+
+/* Закрашивает треугольник в меню  */
+.k-menu-link {
+  //color: #42A7DD;
+}
+
+kendo-textbox {
+  background: #FFF;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  color: #292929;
+}
+
+.k-grid {
+  display: grid;
+}
+
+.title {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.k-appbar {
+  background: #FFF;
+  height: 70px;
+  padding: 0 25px;
+  box-shadow: none;
+
+  .logo {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-image: url('/assets/images/logo.png');
+    background-size: cover;
+    margin-right: 15px;
+  }
+
+  .title {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000;
+    text-transform: uppercase;
+  }
+}
+
+.k-drawer-item {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 24px;
+  color: #6F6F6F;
+  padding: 0 16px;
+
+  .k-item-text {
+    color: #000;
+  }
+
+  &.k-state-selected,
+  &.k-selected {
+    color: #42A7DD;
+  }
+}
+
+.setup-bt {
+  position: absolute;
+  right: 24px;
+  top: 90px;
+}
+
+.main-content {
+  display: inline;
+}
+
+.kendo-drawer-container {
+  flex: 1 1 auto;
+  overflow-y: auto;
+}
+
+.right-float {
+  float: right;
+}
+
+.k-drawer-content {
+  margin-left: 34px;
+}
+
+.k-drawer-content h1 {
+  padding: 20px 0;
+}
+
+.custom-toolbar {
+  width: 100%;
+  background-color: #F6F6F6;
+  line-height: 10px;
+  border-bottom: inset;
+  border-bottom-width: 1px;
+  padding: 3px 8px;
+}
+
+.custom-menu {
+  position: absolute;
+}
+
+.k-menu:not(.k-context-menu) {
+  border-radius: 4px;
+}
+
+.k-menu:not(.k-context-menu) > .k-item:hover {
+  border-radius: 4px;
+}
+
+.k-menu-item {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.k-icon-md {
+  font-size: 20px;
+}
+
+.k-menu-expand-arrow {
+  opacity: 3;
+  margin-inline-end: -20px;
+  display: inline-flex;
+  flex-flow: row wrap;
+  align-items: center;
+  flex: none;
+  position: relative;
+}
+
+.left-menu {
+  padding-top: 1.7em;
+  position: absolute;
+  left: 1em;
+}
+
+.social-section {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: right;
+  text-transform: capitalize;
+  color: #42A7DD;
+}
+
+.kendo-appbar {
+  height: 70px;
+}
+
+.k-button {
+  color: #6F6F6F;
+
+  .k-button-text {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 1.25px;
+  }
+}
+
+.k-input-solid,
+.k-dropdownlist,
+.k-dropdowntree,
+.k-listbox .k-list {
+  border-radius: 4px;
+  border: 1px solid #CCC !important; // needs testing
+  background-color: #FFF;
+}
+
+kendo-dropdownlist {
+  width: 252px;
+  background: #FFF;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  color: #292929;
+}
+
+::ng-deep kendo-popup {
+  background: #FFF;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  color: #292929;
+  line-height: 17px;
+
+  div {
+    background: #FFF;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #292929;
+  }
+}
+
+.setup {
+  background-color: #F5F5F5;
+  border-radius: 4px;
+}
+
+.k-breadcrumb {
+  background-color: $main-background-color;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 13px;
+  line-height: 16px;
+  color: #646464;
+
+  span[role="link"] {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    color: rgba(77, 77, 77, 0.87);
+  }
+
+  .k-breadcrumb-root-item {
+    span[role="link"] {
+      padding-left: 0;
+      color: #646464;
+    }
+  }
+
+  .k-breadcrumb-last-item {
+    span[role="link"] {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      color: #646464;
+    }
+  }
+
+  .k-breadcrumb-delimiter-icon {
+    font-size: 12px;
+    padding: 2px 0 0;
+  }
+}
+
+.k-tilelayout {
+  background-color: $main-background-color;
+}
+
+.k-drawer-container {
+  margin: 19px 24px;
+}
+
+button[themecolor="primary"] {
+  background: #2192CE;
+  border: 1px dashed #2192CE;
+  border-radius: 4px;
+}
+
+.grid-container {
+  padding: 15px 0;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.custom-size {
+  padding: 1px;
+}
+
+.example-wrapper {
+  .k-tabstrip > .k-content {
+    padding-left: 0;
+    padding-right: 0;
+    outline: 0;
+  }
+}
+
+.edit-mode-buttons {
+  margin: 10px 0;
+}
+
+.k-color-primary,
+.k-drawer-content h1 {
+  color: #292929 !important;
+}
+
+.k-toolbar {
+  .k-button-solid-base {
+    margin-right: 1em;
+  }
+}
+
+.k-button-solid-success {
+  color: white;
+  background-color: #9DD878;
+  border-color: #9DD878;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+// Цвет кнопки добавления
+.k-button-solid-primary {
+  color: white;
+  background-color: #9DD878;
+  border-color: #9DD878;
+}
+
+.function-buttons {
+  min-height: 40px;
+
+  .k-button {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    border-radius: 4px;
+    letter-spacing: 1.25px;
+    text-transform: uppercase;
+  }
+
+  .k-button-text {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .k-button-solid-base {
+    color: #6F6F6F;
+    background-color: white;
+    border-color: white;
+  }
+
+  .k-button-solid-success {
+    color: white;
+    background-color: #9DD878;
+    border-color: #9DD878;
+  }
+
+  .k-button-solid-primary {
+    color: white;
+  }
+}
+
+.tilesselectedfilters {
+  display: flex;
+  justify-content: flex-start;
+  flex-flow: row wrap;
+
+  .k-button {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 13px;
+    line-height: 16px;
+    text-transform: none;
+
+    /* цвет текста */
+    color: #FFF;
+  }
+
+  .k-button-solid-info {
+    background-color: #50B9F1;
+    border-color: #50B9F1;
+  }
+
+  .k-button-solid-light {
+    background-color: #C4D8E3;
+    border-color: #C4D8E3;
+
+    .k-button-text {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-style: normal;
+      font-size: 13px;
+      line-height: 16px;
+      text-transform: none;
+    }
+  }
+
+  .k-button-solid-base {
+    color: #6F6F6F;
+  }
+}
+
+.outline-buttons {
+  .k-button .k-button-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 13px;
+    line-height: 16px;
+    text-transform: none;
+
+    /* цвет текста */
+    color: #646464;
+  }
+}
+
+.ng-form {
+  display: inline-block;
+}
+
+.k-button-icon {
+  order: 1;
+}
+
+// Menu
+.menu-picture {
+  display: block;
+  width: 40px;
+  height: 40px;
+  background-image: url("/assets/images/student3.png");
+  margin-right: 15px;
+  border-radius: 100px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/*   GRID FIXES    */
+
+.k-form-error,
+.k-text-error,
+.k-form-field-error .k-label {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+}
+
+.k-animation-container li,
+.k-animation-container-shown li {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.k-column-title {
+  white-space: pre-wrap;
+}
+
+.k-grid-header .k-header {
+  vertical-align: middle;
+}
+
+// Не тестил на других, может поломать клиппинг
+.k-grid th,
+.k-grid td {
+  text-overflow: unset;
+}
+
+.k-expander .k-expander-header,
+.k-tabstrip-items-wrapper .k-tabstrip-items .k-link {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* MENU COLORS */
+.person-menu {
+  position: absolute;
+  right: 1%;
+
+  .k-icon {
+    .k-i-user {
+      color: $menu-icon-color;
+    }
+
+    .k-i-gear {
+      color: $menu-icon-color;
+    }
+
+    .k-i-circle {
+      color: $menu-icon-color;
+    }
+
+    .k-i-logout {
+      color: $menu-icon-color;
+    }
+  }
+}
+
+/* ICON COLORS */
+
+/*
+.k-i-user {
+  color: $menu-icon-color
+}
+
+.k-i-gear {
+  color: $menu-icon-color
+}
+
+.k-i-circle {
+  color: $menu-icon-color
+}
+
+.k-i-logout {
+  color: $menu-icon-color
+}*/
+
+a {
+  text-decoration: inherit;
+  color: inherit;
+}
+
+.k-drawer-item.k-state-selected:hover {
+  color: #42A7DD;
+}
+
+.k-notification-group {
+  z-index: 10000;
+}
+
+.required {
+  color: red;
+  margin: 0 10px 0 0;
+
+  &.left {
+    margin-left: 5px;
+  }
+}
+
+.loading-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.person-menu .k-menu-item .k-menu-expand-arrow {
+  margin-right: -5px;
+  color: #42A7DD;
+}
+
+// Fix border style in student main info
+.k-tabstrip-items-wrapper {
+  border-style: none;
+  outline: 0;
+}
+
+.k-content .k-state-active, .k-content:focus, .k-content.k-focus {
+  outline: 0 !important;
+}
+
+.k-tabstrip-item:focus {
+  box-shadow: none !important;
+}
+
+.ng-tns-c460-1.ng-trigger.ng-trigger-state.k-content.k-state-active.ng-star-inserted {
+  outline: 0;
+}
+
+.label-sticky-top {
+  vertical-align: top;
+  padding-top: 10px;
+}
+
+.k-input-spinner {
+  display: none;
+}
+
+// Общие стили для grid таблиц
+
+.k-header.grid-header {
+  text-align: center;
+  vertical-align: middle;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  justify-content: center;
+  line-height: 17px;
+  white-space: pre-wrap;
+
+  &.hideborder {
+    border: 0;
+  }
+
+  &.bold {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: #000;
+  }
+}
+
+.k-header.left-align {
+  text-align: left;
+  justify-content: left;
+  vertical-align: middle;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  white-space: pre-wrap;
+
+  &.hideborder {
+    border: 0;
+  }
+
+  &.bold {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: #000;
+  }
+}
+
+.k-header.dictionaries {
+  border-left: none;
+  border-right: none;
+}
+
+.grid-cell {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 28px;
+}
+
+.k-grouping-row {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 28px;
+}
+
+.k-list-optionlabel {
+  padding: 2px 9px !important;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 28px;
+}
+
+.k-selected.k-list-optionlabel {
+  padding: 2px 9px;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 28px;
+}
+
+.menu-block {
+  background-color: white;
+  padding: 10px;
+}
+
+.menu-block:hover {
+  background-color: red;
+}
+
+.menu {
+  position: absolute;
+  top: 10px;
+  right: 1%;
+}
+
+label.info {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  display: block;
+  font-size: smaller;
+}
+
+.align-cells {
+  text-align: center;
+  display: flex;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 28px;
+  justify-content: center;
+
+  &.bold {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+  }
+
+  &.left-align {
+    justify-content: flex-start;
+  }
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 50% 50% auto;
+  align-items: center;
+
+  .red {
+    color: #F00;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    padding-left: 10px;
+    font-size: 18px;
+  }
+}
+
+.edit-button {
+  background-color: #BABABA;
+  letter-spacing: 1.25px;
+  color: #FFF;
+  border-style: none;
+}
+
+.k-grid-pager {
+  border-color: transparent;
+}
+
+// Отступы у фильтров
+
+.k-filter-row td {
+  padding: 9px;
+}
+
+// Стили обводки у фильтров
+.k-filter-row {
+  .k-dropdownlist {
+    border: 1px solid #0000008A !important;
+  }
+
+  .k-textbox {
+    border: 1px solid #0000008A !important;
+  }
+}
+
+/* Исправляет наезжающее меню "Настройки" (нужно протестить) */
+
+[id$="child0_0_0"] {
+  width: 300px;
+}
+
+[id$="child0_0_2"] {
+  width: 300px;
+}
+
+[id$="child0_0_3"] {
+  width: 300px;
+}
+
+//////////////////////////////////////////////////////////////
+
+.k-pager-sizes {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  // Pager width fix
+  .k-dropdownlist {
+    width: 100px;
+  }
+}
+
+// Цвет выделения строки в ОП
+.oop-grid.k-grid tr.k-state-selected {
+  background-color: rgba(148, 148, 148, 0.315);
+}
+
+.grid-hidden {
+  padding: 0;
+  margin: 0 auto;
+  display: none;
+}
+
+.left-alignment {
+  text-align: left;
+  justify-content: left;
+}
+
+.center-alignment {
+  text-align: center;
+  justify-content: center;
+}
+
+.qualification-column .k-grid-header,
+.education-column .k-grid-header {
+  padding: 0 !important;
+}
+
+.qualification-column .k-grid-content,
+.education-column .k-grid-content {
+  overflow-y: visible;
+}
+
+.burger-menu.k-icon.k-i-menu {
+  display: none;
+}
+
+@media (max-width: 1340px) {
+  .menu-picture,
+  .person-full-name,
+  .person-menu .k-menu-expand-arrow {
+    display: none;
+  }
+
+  .burger-menu {
+    height: 32px;
+    width: 32px;
+    display: block;
+    background-size: cover;
+  }
+
+  .burger-menu.k-icon.k-i-menu.k-icon-md {
+    font-size: 32px;
+  }
+
+  .burger-menu.k-icon.k-i-menu {
+    display: inherit;
+    color: #525252;
+  }
+}
+
+.title.small {
+  display: none;
+}
+
+@media (max-width: 1110px) {
+  .title.full {
+    display: none !important;
+  }
+
+  .title.small {
+    display: inherit !important;
+  }
+}
+
+.base-education-plan-grid.k-grid td {
+  border-width: 0 1px 1px;
+}
+
+.k-breadcrumb-root-link {
+  margin-right: 0;
+}
+
+.competence-grid.k-grid tr:hover {
+  background-color: transparent !important;
+}
+
+.k-input-solid.k-invalid, .k-input-solid.ng-invalid.ng-touched, .k-input-solid.ng-invalid.ng-dirty {
+  border-color: #F31700 !important;
+}
+
+.k-picker-solid.k-invalid, .k-picker-solid.ng-invalid.ng-touched, .k-picker-solid.ng-invalid.ng-dirty {
+  border-color: #F31700 !important;
+}
+
+.menu-item {
+  padding: 10px;
+
+  .menu-title {
+    width: 200px;
+    color: #42A7DD;
+  }
+}
+
+.person-full-name {
+  color: #42A7DD;
+}
+
+.drawer-item-body {
+  display: block;
+  width: 100%;
+
+  &.url-item {
+    color: #6F6F6F;
+  }
+
+  .drawer-item-content {
+    margin: 11px 0;
+    align-items: center;
+    display: flex;
+
+    kendo-badge {
+      background: #82C659;
+      border: none;
+    }
+  }
+
+  .drawer-item-text {
+    margin-left: 27px;
+  }
+}
+
+.workload-grid {
+  .k-grouping-header .k-group-indicator {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFF;
+    background-color: #50B9F1;
+
+    .k-icon {
+      color: #FFF;
+    }
+
+    .k-link {
+      color: #FFF;
+    }
+  }
+}
+
+.k-chip-md {
+  padding: 2px;
+}
+
+.commissions-grid {
+  margin-top: 20px;
+
+  .k-group-cell.k-header {
+    border: 0;
+  }
+}
+
+.confirmation-text {
+  margin: 30px;
+  text-align: center;
+}
+
+.dict-education__container {
+  h1 {
+    text-align: left;
+    padding: 20px 0;
+  }
+
+  .grid-container {
+    padding: 20px;
+    margin: 0 auto;
+  }
+
+  .grid-default {
+    padding: 0 0 20px;
+    margin: 0 auto;
+  }
+
+  .add-button {
+    margin-bottom: 30px;
+  }
+
+  .edit-form {
+    .k-form {
+      padding: 0 20px 20px 0;
+      width: 50%;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: flex-end;
+      padding-top: 20px;
+    }
+
+    .colorpicker {
+      width: 50%;
+    }
+
+    .k-input-solid.k-invalid {
+      border: 1px solid red !important;
+    }
+
+    h2 {
+      width: 100%;
+      color: #525252;
+    }
+
+    .form-row {
+      .checkbox {
+        width: 50%;
+      }
+    }
+  }
+}
+
+// Используется для исправления проблемы со странным отображением Grid с группировкой без данных
+.no-data {
+  height: unset !important;
+}
+
+// Убирает границы у закрепленных колонок
+.k-grid-content-sticky, .k-grid-header-sticky {
+  border-left: none !important;
+  border-right: none !important;
+}
+
+@media (max-width: 850px) {
+  .breadcrumb-style {
+    width: 250px;
+  }
+}
+

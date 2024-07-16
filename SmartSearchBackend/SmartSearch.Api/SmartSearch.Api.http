@@ -1,0 +1,6 @@
+@SmartSearch.Api_HostAddress = http://localhost:5276
+
+GET {{SmartSearch.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

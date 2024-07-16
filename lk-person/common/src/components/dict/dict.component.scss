@@ -1,0 +1,38 @@
+.edit-mode {
+  display: none;
+}
+
+.k-clear-value {
+  position: absolute;
+  margin: 10px -25px;
+  z-index: 100;
+}
+
+.color-block {
+  width: 60px;
+  height: 35px;
+  border: 1px solid rgba(0, 0, 0, 0.54);
+  border-radius: 4px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+:host ::ng-deep {
+  .k-grid-content {
+    overflow-y: auto;
+  }
+
+  .k-grid-header {
+    padding: 0 !important;
+  }
+
+  .k-picker-solid.ng-invalid {
+    border-width: 1px;
+  }
+
+  .k-filtercell-wrapper .k-textbox {
+    height: 35px;
+  }
+}

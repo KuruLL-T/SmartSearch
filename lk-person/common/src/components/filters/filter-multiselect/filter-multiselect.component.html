@@ -1,0 +1,19 @@
+<kendo-multiselect
+        [data]="data"
+        kendoMultiSelectSummaryTag
+        [kendoDropDownFilter]="{
+            operator: 'contains'
+        }"
+        [textField]="textField"
+        [valueField]="valueField"
+        [checkboxes]="checkboxes"
+        [listHeight]="listHeight"
+        [valuePrimitive]="true"
+        [autoClose]="false"
+        [value]="selectedValue"
+        (valueChange)="onChange($event)"
+>
+    <ng-template kendoMultiSelectGroupTagTemplate let-dataItems>
+        <span>{{ dataItems.length }} выбрано</span>
+    </ng-template>
+</kendo-multiselect>

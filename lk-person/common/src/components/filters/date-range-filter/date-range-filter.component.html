@@ -1,0 +1,32 @@
+<div class="k-form range">
+  <label class="k-form-field range-label">
+    <kendo-datepicker
+            (valueChange)="onStartChange($event)"
+            [value]="start"
+            [max]="max!"
+            placeholder="с"
+            [popupSettings]="popupSettings"
+    >
+    </kendo-datepicker>
+  </label>
+  <label class="k-form-field range-label">
+    <kendo-label class="span">-</kendo-label>
+    <kendo-datepicker
+            (valueChange)="onEndChange($event)"
+            [value]="end"
+            [min]="min!"
+            placeholder="по"
+            [popupSettings]="popupSettings"
+    >
+    </kendo-datepicker>
+  </label>
+
+  <button
+          *ngIf="hasFilter"
+          kendoButton
+          iconClass="k-icon k-font-icon k-i-filter-clear"
+          title="Сбросить"
+          (click)="clearFilter()"
+  ></button>
+
+</div>

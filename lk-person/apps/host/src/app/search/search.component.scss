@@ -1,0 +1,64 @@
+.search-input
+{
+  width: 200px;
+  height: 40px;
+  background-color: #0a3069;
+}
+
+.search-panel
+{
+  display: flex;
+  width: 593px;
+  min-width: 500px;
+  max-width: 750px;
+  flex-direction: column;
+}
+
+.dropdown {
+  display: flex;
+  position: absolute;
+  margin-top: 45px;
+  width: 593px;
+  height: 750px;
+  min-width: 500px;
+  max-width: 750px;
+  min-height: 500px;
+  max-height: 800px;
+  padding: var(--kendo-spacing-25, 10px);
+  flex-direction: column;
+  align-items: center;
+  gap: var(--kendo-spacing-25, 10px);
+  flex-shrink: 0;
+  border-radius: var(--border-radius-lg, 8px);
+  background: #FFF;
+  box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.35);
+  z-index: 5;
+}
+
+.dropdown select {
+  width: 100%; /* Ширина выпадающего списка */
+  height: 30px; /* Высота выпадающего списка */
+  padding: 5px; /* Внутренние отступы */
+  border: 1px solid #ccc; /* Граница */
+  font-size: 16px; /* Размер шрифта */
+}
+
+.dropdown options {
+  padding: 5px 10px; /* Внутренние отступы */
+}
+
+.dropdown button {
+  display: block; /* Отображение блоком */
+  width: 100%; /* Ширина кнопки */
+  height: 40px; /* Высота кнопки */
+  margin-bottom: 10px; /* Отступ снизу */
+  padding: 10px; /* Внутренние отступы */
+  border: 1px solid #ccc; /* Граница */
+  background-color: #eee; /* Фон */
+  cursor: pointer; /* Указатель курсора */
+  transition: background-color 0.3s ease; /* Переход при наведении */
+}
+
+.dropdown button:hover {
+  background-color: #ddd; /* Цвет фона при наведении */
+}

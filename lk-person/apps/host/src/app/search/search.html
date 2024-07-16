@@ -1,0 +1,13 @@
+<div class="search-panel">
+  <kendo-textbox
+    [(ngModel)]="searchQuery"
+    placeholder="ПОИСК ПО САЙТУ"
+    [style.width.%]="100"
+  >
+  </kendo-textbox>
+  <div class="dropdown" *ngIf="searchQuery.length > 0">
+    <app-search-filters></app-search-filters>
+    <app-search-results [searchString]="searchQuery"></app-search-results>
+    <app-search-additional></app-search-additional>
+  </div>
+</div>
